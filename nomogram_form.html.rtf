@@ -1,0 +1,77 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="it">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Test Nomogram</title>\
+    <style>\
+        body \{ font-family: Arial, sans-serif; \}\
+        .container \{ max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; \}\
+        .section \{ margin-bottom: 15px; \}\
+        .result \{ font-weight: bold; margin-top: 20px; \}\
+    </style>\
+    <script>\
+        function calculateScore() \{\
+            let score = 0;\
+            document.querySelectorAll('input[type="radio"]:checked').forEach(input => \{\
+                score += parseInt(input.value);\
+            \});\
+            document.getElementById("totalScore").innerText = "Punteggio Totale: " + score;\
+        \}\
+    </script>\
+</head>\
+<body>\
+    <div class="container">\
+        <h2>Test Nomogram</h2>\
+        \
+        <div class="section">\
+            <p>Patogeni:</p>\
+            <label><input type="radio" name="patogeni" value="0" onclick="calculateScore()"> Gram positivi (0 pt)</label><br>\
+            <label><input type="radio" name="patogeni" value="40" onclick="calculateScore()"> Gram negativi (40 pt)</label>\
+        </div>\
+        \
+        <div class="section">\
+            <p>Numero di recidive di cistite (negli ultimi 12 mesi):</p>\
+            <label><input type="radio" name="recidive" value="0" onclick="calculateScore()"> &lt; 3 (0 pt)</label><br>\
+            <label><input type="radio" name="recidive" value="40" onclick="calculateScore()"> \uc0\u8805  3 (40 pt)</label>\
+        </div>\
+        \
+        <div class="section">\
+            <p>Trattamenti per la batteriuria asintomatica (negli ultimi 12 mesi):</p>\
+            <label><input type="radio" name="batteriuria" value="0" onclick="calculateScore()"> No (0 pt)</label><br>\
+            <label><input type="radio" name="batteriuria" value="50" onclick="calculateScore()"> S\'ec (50 pt)</label>\
+        </div>\
+        \
+        <div class="section">\
+            <p>Funzionalit\'e0 intestinale:</p>\
+            <label><input type="radio" name="intestinale" value="0" onclick="calculateScore()"> Normale (0 pt)</label><br>\
+            <label><input type="radio" name="intestinale" value="30" onclick="calculateScore()"> Diarrea (30 pt)</label><br>\
+            <label><input type="radio" name="intestinale" value="50" onclick="calculateScore()"> Costipazione (50 pt)</label>\
+        </div>\
+        \
+        <div class="section">\
+            <p>Numero di partner (negli ultimi 12 mesi):</p>\
+            <label><input type="radio" name="partner" value="0" onclick="calculateScore()"> 1 (0 pt)</label><br>\
+            <label><input type="radio" name="partner" value="20" onclick="calculateScore()"> 2 (20 pt)</label><br>\
+            <label><input type="radio" name="partner" value="35" onclick="calculateScore()"> \uc0\u8805  3 (35 pt)</label>\
+        </div>\
+        \
+        <div class="section">\
+            <p>Status ormonale:</p>\
+            <label><input type="radio" name="ormoni" value="0" onclick="calculateScore()"> Pre-menopausa (0 pt)</label><br>\
+            <label><input type="radio" name="ormoni" value="0" onclick="calculateScore()"> Peri e post menopausa con terapia ormonale sostitutiva (0 pt)</label><br>\
+            <label><input type="radio" name="ormoni" value="10" onclick="calculateScore()"> Peri e post menopausa (10 pt)</label>\
+        </div>\
+        \
+        <div class="result" id="totalScore">Punteggio Totale: 0</div>\
+    </div>\
+</body>\
+</html>\
+}
